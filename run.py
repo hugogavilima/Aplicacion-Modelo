@@ -141,7 +141,7 @@ ans_matricula_porc = st.slider('Porcentaje de Descuento Matricula ', 0, 100)
 ans_beca_monto = st.number_input('Escriba el valor total del descuento en la colegiatura: ', min_value=0.0, max_value=1e7, step=0.1)
 ans_matricula_monto = st.number_input('Escriba el valor total del descuento en la matricula: ', min_value=0.0, max_value=1e7, step=0.1)
 
-if st.button('Mostrar cuadro emergente'):
+if st.button('Calculo de Días de Mora'):
     max_days = Calculo_Max_Mora(ans_gender, ans_edad, ans_provincia, ans_jefe, ans_EC, ans_hijos, ans_bin_hijos, ans_sede, ans_grado, 
                                 ans_carrera, ans_materias, ans_monto_fin, ans_monto_couta, ans_bin_lab, ans_patrono, 
                                 ans_propiedades, ans_vehiculos, ans_hipoteca, ingreso, ans_beca, ans_matricula_porc, 
