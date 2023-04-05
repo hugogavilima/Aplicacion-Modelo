@@ -131,4 +131,9 @@ def Calculo_Max_Mora(gender, edad, provincia, jefe, EC, hijos, ans_bin_hijos, se
                     w_gender, intercept])    
     
     
-    return int(max_dias)
+    result = int(max_dias)
+    
+    if int(max_dias) < 0:
+        result = 0
+    
+    return result
