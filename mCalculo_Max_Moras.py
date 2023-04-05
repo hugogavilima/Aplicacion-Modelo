@@ -8,7 +8,7 @@ def Calculo_Max_Mora(gender, edad, provincia, jefe, EC, hijos, ans_bin_hijos, se
                      propiedades, vehiculos, hipoteca, ingreso, por_beca, por_matricula, 
                      monto_beca, monto_matricula):
     
-    with open('pesos.json', encoding='utf-8-sig') as f:
+    with open('pesos_latina.json', encoding='utf-8-sig') as f:
         data = json.load(f)    
     intercept = float(data[0]['Intercept'])
     
