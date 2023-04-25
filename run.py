@@ -115,7 +115,7 @@ with col2:
     ans_grado =st.selectbox('Grado mayor alcanzado', grado)
     ans_carrera = st.selectbox('Carrera en Curso', carrera)
     ans_materias = st.slider('Materias Matriculadas', 0, 7, value=4)
-    ans_monto_fin = st.number_input('Escriba el monto financiado: ', min_value=0.0, max_value=1e7, step=0.1, value=500000)
+    ans_monto_fin = st.number_input('Escriba el monto financiado: ', min_value=0.0, max_value=1e7, step=0.1, value=500000.0)
     ans_monto_couta = st.number_input('Escriba el valor de la couta: ', min_value=0.0, max_value=1e7, step=0.1, value=90000)
        
     
