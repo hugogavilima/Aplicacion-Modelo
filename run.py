@@ -116,7 +116,7 @@ with col2:
     ans_carrera = st.selectbox('Carrera en Curso', carrera)
     ans_materias = st.slider('Materias Matriculadas', 0, 7, value=4)
     ans_monto_fin = st.number_input('Escriba el monto financiado: ', min_value=0.0, max_value=1e7, step=0.1, value=500000.0)
-    ans_monto_couta = st.number_input('Escriba el valor de la couta: ', min_value=0.0, max_value=1e7, step=0.1, value=90000)
+    ans_monto_couta = st.number_input('Escriba el valor de la couta: ', min_value=0.0, max_value=1e7, step=0.1, value=90000.0)
        
     
     
@@ -133,13 +133,13 @@ with col3:
     st.write("")
     ans_hipoteca = st.checkbox('Tiene un Credito Hipotecario')
     st.write("")
-    ingreso = st.number_input('Escriba el ingreso estimado: ', min_value=0.0, max_value=1e15, step=0.1, value=300000)
+    ingreso = st.number_input('Escriba el ingreso estimado: ', min_value=0.0, max_value=1e15, step=0.1, value=300000.0)
 
 st.write("### Descuentos")
 ans_beca = st.slider('Porcentaje de Descuento Colegiatura ', 0, 100, value=30)
 ans_matricula_porc = st.slider('Porcentaje de Descuento Matricula ', 0, 100, value=50)
-ans_beca_monto = st.number_input('Escriba el valor total del descuento en la colegiatura: ', min_value=0.0, max_value=1e7, step=0.1, value=300000)
-ans_matricula_monto = st.number_input('Escriba el valor total del descuento en la matricula: ', min_value=0.0, max_value=1e7, step=0.1, value=40000)
+ans_beca_monto = st.number_input('Escriba el valor total del descuento en la colegiatura: ', min_value=0.0, max_value=1e7, step=0.1, value=300000.0)
+ans_matricula_monto = st.number_input('Escriba el valor total del descuento en la matricula: ', min_value=0.0, max_value=1e7, step=0.1, value=40000.0)
 
 if st.button('Calculo de Días de Mora'):
     max_days = Calculo_Max_Mora(ans_gender, ans_edad, ans_provincia, ans_jefe, ans_EC, ans_hijos, ans_bin_hijos, ans_sede, ans_grado, 
