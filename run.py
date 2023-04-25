@@ -16,7 +16,7 @@ st.sidebar.write(
     )
 
 opciones = ['Universidad Latina de Costa Rica', 'Universidad Americana']
-ans_box = st.sidebar.selectbox('Porfavor elija la universidad correspondiente:', opciones)
+ans_box = st.sidebar.selectbox('Por favor elija la universidad correspondiente:', opciones)
 
 if ans_box == opciones[0]:
     image = Image.open("Universidad Latina de Costa Rica.png")
