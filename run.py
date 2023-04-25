@@ -12,7 +12,7 @@ st.set_page_config(layout="wide", page_title="Máximo Días de Mora")
 st.write("# Máximo Días de Mora")
 st.sidebar.write("### Calculadora")
 st.sidebar.write(
-    "Esta aplicación te permite calcular el máximo días de mora de una persona dada su información academica, civil, financiera del estudiante. Además de tomar en cuenta si tiene algun tipo de beca tanto en su colegiatura o matricula del semestre en cuestion"
+    "Esta aplicación te permite calcular el máximo días de mora de una persona dada su información académica, civil y financiera. Además, toma en cuenta si el estudiante tiene algún tipo de descuento tanto en su colegiatura o matricula del semestre en cuestión."
     )
 
 opciones = ['Universidad Latina de Costa Rica', 'Universidad Americana']
