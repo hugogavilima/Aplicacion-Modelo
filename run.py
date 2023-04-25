@@ -16,7 +16,7 @@ st.sidebar.write(
     )
 
 opciones = ['Universidad Latina de Costa Rica', 'Universidad Americana']
-ans_box = st.sidebar.selectbox('Por favor elija la universidad correspondiente:', opciones)
+ans_box = st.sidebar.selectbox('Por favor, elija la universidad correspondiente:', opciones)
 
 if ans_box == opciones[0]:
     image = Image.open("Universidad Latina de Costa Rica.png")
@@ -57,7 +57,7 @@ sede = ['Heredia', 'Cañas', 'San Pedro', 'Ciudad Neily', 'Grecia',
 provincia = ['HEREDIA', 'ALAJUELA', 'PUNTARENAS', 'SAN JOSE', 'No registra',
        'LIMON', 'CARTAGO', 'GUANACASTE']
 patrono = ['Gobierno', 'Privado', 'Independiente']
-EC = ['Divorciado(a)', 'Casado(a)', 'Soltero(a)', 'Viudez']
+EC = ['Soltero(a)', 'Divorciado(a)', 'Casado(a)', 'Viudez']
 hijos = [ "NO", "SI", "No registra"]
 bin_lab = [ "NO","SI", "No registra"]
 ans_bin_hijos = "No registra"
@@ -85,12 +85,12 @@ carrera = ['RELACIONES PÚBLICAS', 'INGENIERÍA INDUSTRIAL', 'TERAPIA FÍSICA',
        'INGENIERÍA DE SISTEMAS',
        'INGENIERÍA ELECTRÓNICA Y COMUNICACIONES',
        'ADMINISTRACIÓN DE LA HOSPITALIDAD']
-grado = ['BACHILLERATO', 'LICENCIATURA']
+grado = ['LICENCIATURA', 'BACHILLERATO']
 
 with col1:
     st.write("### Civil")
     ans_gender = st.selectbox('Género', gender)
-    ans_edad = st.slider('Edad', 18, 100)
+    ans_edad = st.slider('Edad', 18, 100, value=29)
     ans_provincia = st.selectbox('Provincia', provincia)
     st.write("")
     ans_jefe = st.checkbox('Es jefe de hogar')
@@ -114,9 +114,9 @@ with col2:
     ans_sede = st.selectbox('SEDE', sede)
     ans_grado =st.selectbox('Grado mayor alcanzado', grado)
     ans_carrera = st.selectbox('Carrera en Curso', carrera)
-    ans_materias = st.slider('Materias Matriculadas', 0, 7)
-    ans_monto_fin = st.number_input('Escriba el monto financiado: ', min_value=0.0, max_value=1e7, step=0.1)
-    ans_monto_couta = st.number_input('Escriba el valor de la couta: ', min_value=0.0, max_value=1e7, step=0.1)
+    ans_materias = st.slider('Materias Matriculadas', 0, 7, value=4)
+    ans_monto_fin = st.number_input('Escriba el monto financiado: ', min_value=0.0, max_value=1e7, step=0.1, value=500000)
+    ans_monto_couta = st.number_input('Escriba el valor de la couta: ', min_value=0.0, max_value=1e7, step=0.1, value=90000)
        
     
     
@@ -128,18 +128,18 @@ with col3:
     if ans_bin_lab == "SI":
         ans_patrono = st.selectbox('Empleador', patrono)
     
-    ans_propiedades = st.slider('Numero de Propiedades', 0, 20)
-    ans_vehiculos = st.slider('Numero de Vehiculos', 0, 40)
+    ans_propiedades = st.slider('Numero de Propiedades', 0, 20, value=1)
+    ans_vehiculos = st.slider('Numero de Vehiculos', 0, 40, value=0)
     st.write("")
     ans_hipoteca = st.checkbox('Tiene un Credito Hipotecario')
     st.write("")
-    ingreso = st.number_input('Escriba el ingreso estimado: ', min_value=0.0, max_value=1e15, step=0.1)
+    ingreso = st.number_input('Escriba el ingreso estimado: ', min_value=0.0, max_value=1e15, step=0.1, value=300000)
 
 st.write("### Descuentos")
-ans_beca = st.slider('Porcentaje de Descuento Colegiatura ', 0, 100)
-ans_matricula_porc = st.slider('Porcentaje de Descuento Matricula ', 0, 100)
-ans_beca_monto = st.number_input('Escriba el valor total del descuento en la colegiatura: ', min_value=0.0, max_value=1e7, step=0.1)
-ans_matricula_monto = st.number_input('Escriba el valor total del descuento en la matricula: ', min_value=0.0, max_value=1e7, step=0.1)
+ans_beca = st.slider('Porcentaje de Descuento Colegiatura ', 0, 100, value=30)
+ans_matricula_porc = st.slider('Porcentaje de Descuento Matricula ', 0, 100, value=50)
+ans_beca_monto = st.number_input('Escriba el valor total del descuento en la colegiatura: ', min_value=0.0, max_value=1e7, step=0.1, value=300000)
+ans_matricula_monto = st.number_input('Escriba el valor total del descuento en la matricula: ', min_value=0.0, max_value=1e7, step=0.1, value=40000)
 
 if st.button('Calculo de Días de Mora'):
     max_days = Calculo_Max_Mora(ans_gender, ans_edad, ans_provincia, ans_jefe, ans_EC, ans_hijos, ans_bin_hijos, ans_sede, ans_grado, 
